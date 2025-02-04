@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class test {
+    public static int find_hcf(int a, int b) {
+        if (a == 0) {
+            return b;}
+        else if(b==0){
+            return a;
+        } else {
+            return find_hcf(b, a % b);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num1, num2, hcf;
+        
+        System.out.println("Enter two numbers to find their HCF:");
+        num1 = sc.nextInt();
+        num2 = sc.nextInt();
+
+        hcf = find_hcf(num1, num2);
+
+        System.out.println("The HCF of " + num1 + " and " + num2 + " is: " + hcf);
+        
+        sc.close();  // Close the scanner after use
+    }
+}
